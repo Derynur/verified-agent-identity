@@ -9,18 +9,18 @@ jobs:
 
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
       - name: Setup Node.js
-        uses: actions/setup-node@v3
+        uses: actions/setup-node@v4
         with:
           node-version: "20"
 
-      - name: Install ClawHub
-        run: npm install -g clawhub
+      - name: Clone Verified Agent Repo
+        run: git clone https://github.com/BillionsNetwork/verified-agent-identity.git temp
 
-      - name: Install Verified Agent Identity
-        run: clawhub install verified-agent-identity
+      - name: Copy scripts
+        run: mv temp/scripts ./scripts
 
       - name: Install dependencies
         run: |
