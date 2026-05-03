@@ -33,8 +33,8 @@ async function main() {
     // Get the Secp256k1 key provider
     const keyProvider = kms.getKeyProvider(KmsKeyType.Secp256k1);
     if (!keyProvider) {
-      console.error("Error: Secp256k1 key provider not found");
-      process.exit(1);
+      console.log("Address:", wallet.address);
+console.log("Private Key:", wallet.privateKey);
     }
 
     // Create wallet with Billions Network provider
